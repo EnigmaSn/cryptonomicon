@@ -1,7 +1,31 @@
 <template>
   <div class="container mx-auto flex flex-col items-center bg-gray-100 p-4">
+    <!-- <div
+      class="fixed w-100 h-100 opacity-80 bg-purple-800 inset-0 z-50 flex items-center justify-center"
+    >
+      <svg
+        class="animate-spin -ml-1 mr-3 h-12 w-12 text-white"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <circle
+          class="opacity-25"
+          cx="12"
+          cy="12"
+          r="10"
+          stroke="currentColor"
+          stroke-width="4"
+        ></circle>
+        <path
+          class="opacity-75"
+          fill="currentColor"
+          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+        ></path>
+      </svg>
+    </div> -->
+
     <div class="container">
-      <div class="w-full my-4"></div>
       <section>
         <div class="flex">
           <div class="max-w-xs">
@@ -19,6 +43,29 @@
                 placeholder="Например DOGE"
               />
             </div>
+            <!-- <div class="flex bg-white shadow-md p-1 rounded-md flex-wrap">
+              <span
+                class="inline-flex items-center px-2 m-1 rounded-md text-xs font-medium bg-gray-300 text-gray-800 cursor-pointer"
+              >
+                BTC
+              </span>
+              <span
+                class="inline-flex items-center px-2 m-1 rounded-md text-xs font-medium bg-gray-300 text-gray-800 cursor-pointer"
+              >
+                DOGE
+              </span>
+              <span
+                class="inline-flex items-center px-2 m-1 rounded-md text-xs font-medium bg-gray-300 text-gray-800 cursor-pointer"
+              >
+                BCH
+              </span>
+              <span
+                class="inline-flex items-center px-2 m-1 rounded-md text-xs font-medium bg-gray-300 text-gray-800 cursor-pointer"
+              >
+                CHD
+              </span>
+            </div>
+            <div class="text-sm text-red-600">Такой тикер уже добавлен</div> -->
           </div>
         </div>
         <button
@@ -204,7 +251,7 @@ export default {
     subscribeToUpdates(tickerName) {
       setInterval(async () => {
         const f = await fetch(
-          `https://min-api.cryptocompare.com/data/price?fsym=${tickerName}&tsyms=USD&api_key=ce3fd966e7a1d10d65f907b20bf000552158fd3ed1bd614110baa0ac6cb57a7e`
+          `https://min-api.cryptocompare.com/data/price?fsym=${tickerName}&tsyms=USD&api_key=0fe47b7fb390982614e97a24316f50ea7eb505d2af69afba69b2c09ce1c825a0`
         );
         const data = await f.json();
 
